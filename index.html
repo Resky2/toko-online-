@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Warung Sess Mas Resky — Kreco, Janggelan &amp; Rica-Rica Bekicot</title>
+<meta name="description" content="Warung Sess Mas Resky. Pesan kreco, janggelan, dan rica-rica bekicot langsung lewat WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bevan&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg-deep:#243420;
+    --bg-deep-2:#1b2818;
+    --cream:#efe3c3;
+    --cream-2:#f6eeda;
+    --ink:#221a11;
+    --chili:#b5402a;
+    --chili-dark:#8f301e;
+    --turmeric:#c68a2e;
+    --shell:#8b7355;
+    --line: rgba(34,26,17,0.18);
+  }
+
+  *{ box-sizing:border-box; }
+
+  html{ scroll-behavior:smooth; }
+
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    line-height:1.5;
+  }
+
+  h1,h2,h3, .display{
+    font-family:'Bevan', serif;
+    font-weight:400;
+    line-height:1.15;
+    margin:0;
+  }
+
+  img,svg{ display:block; max-width:100%; }
+
+  a{ color:inherit; }
+
+  .wrap{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ---------- HERO ---------- */
+
+  .hero{
+    background:
+      radial-gradient(ellipse at 20% -10%, #33482c 0%, transparent 55%),
+      radial-gradient(ellipse at 90% 110%, #1a2717 0%, transparent 50%),
+      var(--bg-deep);
+    padding:20px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .topbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 0;
+    color:var(--cream-2);
+  }
+
+  .topbar .mark{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-family:'Bevan', serif;
+    font-size:1.05rem;
+    letter-spacing:0.02em;
+  }
+
+  .topbar .mark svg{ width:30px; height:30px; }
+
+  .topbar nav a{
+    text-decoration:none;
+    color:var(--cream-2);
+    opacity:0.85;
+    margin-left:22px;
+    font-size:0.92rem;
+  }
+  .topbar nav a:hover{ opacity:1; }
+
+  .signboard{
+    margin:56px auto 0;
+    max-width:760px;
+    text-align:center;
+    color:var(--cream-2);
+  }
+
+  .signboard .eyebrow-leaf{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-bottom:18px;
+    color:var(--turmeric);
+  }
+  .signboard .eyebrow-leaf svg{ width:26px; height:26px; }
+
+  .signboard h1{
+    font-size:clamp(2.4rem, 6vw, 4.1rem);
+    color:var(--cream-2);
+  }
+
+  .signboard h1 span{
+    display:block;
+    color:var(--turmeric);
+    font-size:0.42em;
+    margin-top:10px;
+    letter-spacing:0.03em;
+  }
+
+  .signboard p{
+    max-width:480px;
+    margin:22px auto 0;
+    color:#d8d2bd;
+    font-size:1.02rem;
+  }
+
+  .hero-cta{
+    display:flex;
+    justify-content:center;
+    gap:14px;
+    margin-top:32px;
+    flex-wrap:wrap;
+  }
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+    padding:13px 24px;
+    border-radius:6px;
+    font-family:'Work Sans', sans-serif;
+    font-weight:600;
+    font-size:0.98rem;
+    text-decoration:none;
+    border:2px solid transparent;
+    cursor:pointer;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+
+  .btn-primary{
+    background:var(--chili);
+    color:#fff8ee;
+    box-shadow:0 6px 0 var(--chili-dark);
+  }
+  .btn-primary:hover{ box-shadow:0 8px 0 var(--chili-dark); }
+  .btn-primary:active{ transform:translateY(1px); box-shadow:0 3px 0 var(--chili-dark); }
+
+  .btn-ghost{
+    background:transparent;
+    color:var(--cream-2);
+    border-color:rgba(239,227,195,0.4);
+  }
+  .btn-ghost:hover{ border-color:var(--cream-2); }
+
+  /* wavy divider between hero and menu, hand-cut leaf edge */
+  .wave{
+    display:block;
+    width:100%;
+    height:46px;
+    margin-top:-2px;
+  }
+
+  /* ---------- MENU ---------- */
+
+  .menu{
+    padding:78px 0 40px;
+  }
+
+  .menu-head{
+    text-align:center;
+    max-width:560px;
+    margin:0 auto 48px;
+  }
+
+  .menu-head h2{
+    font-size:clamp(1.8rem, 4vw, 2.5rem);
+    color:var(--ink);
+  }
+
+  .menu-head p{
+    margin-top:14px;
+    color:#4c4230;
+    font-size:1rem;
+  }
+
+  .menu-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:26px;
+  }
+
+  @media (max-width:860px){
+    .menu-grid{ grid-template-columns:1fr; max-width:420px; margin:0 auto; }
+  }
+
+  .plate{
+    background:var(--cream-2);
+    border:2px solid var(--ink);
+    border-radius:14px;
+    padding:26px 22px 22px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+    box-shadow:5px 5px 0 rgba(34,26,17,0.14);
+  }
+
+  .plate .torn{
+    position:absolute;
+    top:-11px;
+    left:24px;
+    background:var(--turmeric);
+    color:var(--ink);
+    font-family:'Bevan', serif;
+    font-size:0.72rem;
+    padding:5px 12px;
+    border-radius:4px;
+    transform:rotate(-3deg);
+    box-shadow:0 3px 0 rgba(34,26,17,0.2);
+  }
+
+  .plate .icon{
+    width:64px;
+    height:64px;
+    margin-top:6px;
+  }
+
+  .plate h3{
+    font-size:1.35rem;
+    color:var(--ink);
+  }
+
+  .plate p.desc{
+    margin:0;
+    color:#4c4230;
+    font-size:0.92rem;
+    min-height:64px;
+  }
+
+  .plate .price-row{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-top:auto;
+    padding-top:10px;
+    border-top:1px dashed var(--line);
+  }
+
+  .price-tag{
+    font-family:'Bevan', serif;
+    font-size:1.3rem;
+    color:var(--chili);
+  }
+  .price-tag small{
+    font-family:'Work Sans', sans-serif;
+    font-weight:500;
+    font-size:0.62rem;
+    color:#6b5f47;
+    display:block;
+    margin-top:2px;
+  }
+
+  .order-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    background:var(--chili);
+    color:#fff8ee;
+    text-decoration:none;
+    padding:11px 18px;
+    border-radius:7px;
+    font-weight:600;
+    font-size:0.9rem;
+    box-shadow:0 4px 0 var(--chili-dark);
+    transition:transform 0.15s ease;
+  }
+  .order-btn:hover{ transform:translateY(-2px); }
+  .order-btn:active{ transform:translateY(1px); box-shadow:0 2px 0 var(--chili-dark); }
+  .order-btn svg{ width:17px; height:17px; }
+
+  /* ---------- ABOUT / STRIP ---------- */
+
+  .strip{
+    margin-top:64px;
+    background:var(--bg-deep-2);
+    color:var(--cream-2);
+    padding:44px 0;
+  }
+  .strip .wrap{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+  .strip h3{
+    font-size:1.4rem;
+    max-width:420px;
+  }
+  .strip p{
+    color:#cfc8b1;
+    max-width:360px;
+    margin:10px 0 0;
+    font-size:0.92rem;
+  }
+
+  /* ---------- FOOTER ---------- */
+
+  footer{
+    padding:40px 0 30px;
+    text-align:center;
+    color:#6b5f47;
+    font-size:0.85rem;
+  }
+  footer .fwa{
+    color:var(--chili);
+    font-weight:600;
+    text-decoration:none;
+  }
+
+  /* floating WA button on mobile/desktop */
+  .float-wa{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    background:var(--chili);
+    color:#fff8ee;
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    box-shadow:0 6px 16px rgba(0,0,0,0.28);
+    text-decoration:none;
+    z-index:50;
+  }
+  .float-wa svg{ width:26px; height:26px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="topbar">
+      <div class="mark">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 4C11 4 4 11 4 20c0 9 7 16 16 16 9 0 16-7 16-16C36 11 29 4 20 4z" fill="#c68a2e"/>
+          <path d="M13 22c0-5 3-9 7-9s7 4 7 9-3 7-7 7-7-2-7-7z" fill="#efe3c3"/>
+          <circle cx="17" cy="20" r="1.6" fill="#221a11"/>
+        </svg>
+        Warung Sess Mas Resky
+      </div>
+      <nav>
+        <a href="#menu">Menu</a>
+        <a href="#cara-pesan">Cara Pesan</a>
+      </nav>
+    </div>
+
+    <div class="signboard">
+      <div class="eyebrow-leaf">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C7 2 3 6 3 11c0 6 5 9 9 11 4-2 9-5 9-11 0-5-4-9-9-9zm0 4c2.8 0 5 2.2 5 5 0 3.5-2.6 5.7-5 7-2.4-1.3-5-3.5-5-7 0-2.8 2.2-5 5-5z"/></svg>
+      </div>
+      <h1>Kreco, Janggelan &amp; Rica-Rica Bekicot<span>Racikan rumahan, pedas dan segarnya pas</span></h1>
+      <p>Camilan kreco gurih, es janggelan yang bikin adem, sampai rica-rica bekicot pedas nampol — semua diolah langsung dari Warung Sess Mas Resky. Pilih menunya, pesan langsung lewat WhatsApp.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#menu">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M7 4h-2l-1 2v2h1l3 10a2 2 0 0 0 2 1h8a2 2 0 0 0 2-1l3-9H6.4M9 20a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm8 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" stroke="none"/></svg>
+          Lihat Menu
+        </a>
+        <a class="btn btn-ghost" href="#cara-pesan">Cara Pesan</a>
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave" viewBox="0 0 1200 46" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0 20 Q 50 46 100 20 T 200 20 T 300 20 T 400 20 T 500 20 T 600 20 T 700 20 T 800 20 T 900 20 T 1000 20 T 1100 20 T 1200 20 V46 H0 Z" fill="#efe3c3"/>
+  </svg>
+</header>
+
+<main>
+  <section class="menu" id="menu">
+    <div class="wrap">
+      <div class="menu-head">
+        <h2>Menu Warung</h2>
+        <p>Tiga andalan Warung Sess Mas Resky. Klik "Pesan Sekarang" dan pesananmu langsung terkirim ke WhatsApp kami.</p>
+      </div>
+
+      <div class="menu-grid">
+
+        <!-- KRECO -->
+        <article class="plate">
+          <span class="torn">Camilan Favorit</span>
+          <svg class="icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="32" cy="46" rx="24" ry="6" fill="#c68a2e" opacity="0.25"/>
+            <path d="M20 40c-6-3-8-11-3-17 4-5 12-6 17-2 4 3 5 8 3 12" stroke="#b5402a" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <circle cx="36" cy="24" r="9" fill="#b5402a"/>
+            <circle cx="36" cy="24" r="5" fill="#efe3c3"/>
+            <circle cx="18" cy="41" r="3" fill="#8b7355"/>
+            <circle cx="26" cy="46" r="3" fill="#8b7355"/>
+            <circle cx="34" cy="47" r="3" fill="#8b7355"/>
+          </svg>
+          <h3>Kreco</h3>
+          <p class="desc">Keripik keong gurih renyah, digoreng kering dengan bumbu rempah khas warung. Cocok jadi teman ngobrol sore.</p>
+          <div class="price-row">
+            <span class="price-tag">Rp10.000<small>per porsi</small></span>
+            <a class="order-btn" target="_blank" rel="noopener"
+               href="https://wa.me/6285748091574?text=Halo%2C%20saya%20mau%20beli%20Kreco">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.6A11 11 0 1 0 20.5 3.5zm-8.4 17a9 9 0 0 1-4.6-1.3l-.3-.2-3 1 1-2.9-.2-.3A9 9 0 1 1 12.1 20.5zm5-6.7c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.3z"/></svg>
+              Pesan Sekarang
+            </a>
+          </div>
+        </article>
+
+        <!-- JANGGELAN -->
+        <article class="plate">
+          <span class="torn">Penyegar Dahaga</span>
+          <svg class="icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18 16h28l-3 34a4 4 0 0 1-4 4H25a4 4 0 0 1-4-4L18 16z" fill="#efe3c3" stroke="#221a11" stroke-width="2.5"/>
+            <path d="M20 30h24l-2 20a4 4 0 0 1-4 4H26a4 4 0 0 1-4-4l-2-20z" fill="#221a11"/>
+            <circle cx="26" cy="36" r="2" fill="#8b7355"/>
+            <circle cx="33" cy="42" r="2" fill="#8b7355"/>
+            <circle cx="38" cy="35" r="2" fill="#8b7355"/>
+            <circle cx="30" cy="48" r="2" fill="#8b7355"/>
+            <rect x="16" y="13" width="32" height="4" rx="2" fill="#c68a2e"/>
+          </svg>
+          <h3>Janggelan</h3>
+          <p class="desc">Es cincau hitam asli, disiram gula aren cair dan santan segar. Manis pas, adem sampai ke tenggorokan.</p>
+          <div class="price-row">
+            <span class="price-tag">Rp5.000<small>per gelas</small></span>
+            <a class="order-btn" target="_blank" rel="noopener"
+               href="https://wa.me/6285748091574?text=Halo%2C%20saya%20mau%20beli%20Janggelan">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.6A11 11 0 1 0 20.5 3.5zm-8.4 17a9 9 0 0 1-4.6-1.3l-.3-.2-3 1 1-2.9-.2-.3A9 9 0 1 1 12.1 20.5zm5-6.7c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.3z"/></svg>
+              Pesan Sekarang
+            </a>
+          </div>
+        </article>
+
+        <!-- RICA-RICA BEKICOT -->
+        <article class="plate">
+          <span class="torn">Pedas Nampol</span>
+          <svg class="icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="32" cy="48" rx="22" ry="5" fill="#221a11" opacity="0.12"/>
+            <path d="M22 22c-2 6 1 10 6 11 6 1 11-3 11-9 0-5-4-9-9-9-2 6 0 5-8 7z" fill="#b5402a"/>
+            <path d="M22 22c-6 2-8 8-4 13 3 3 8 3 10-1" stroke="#8f301e" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <circle cx="18" cy="35" r="4" fill="#efe3c3" stroke="#221a11" stroke-width="1.5"/>
+            <path d="M40 20c2-4 6-5 8-3M42 24c3-2 6-1 7 2" stroke="#3f6b2e" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <h3>Rica-Rica Bekicot</h3>
+          <p class="desc">Bekicot pilihan dimasak rica-rica pedas gurih, meresap sampai dalam. Nikmat disantap hangat dengan nasi putih.</p>
+          <div class="price-row">
+            <span class="price-tag">Rp20.000<small>per porsi</small></span>
+            <a class="order-btn" target="_blank" rel="noopener"
+               href="https://wa.me/6285748091574?text=Halo%2C%20saya%20mau%20beli%20Rica-Rica%20Bekicot">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.6A11 11 0 1 0 20.5 3.5zm-8.4 17a9 9 0 0 1-4.6-1.3l-.3-.2-3 1 1-2.9-.2-.3A9 9 0 1 1 12.1 20.5zm5-6.7c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.3z"/></svg>
+              Pesan Sekarang
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="strip" id="cara-pesan">
+    <div class="wrap">
+      <div>
+        <h3>Cara pesannya gampang</h3>
+        <p>Klik "Pesan Sekarang" pada menu yang kamu mau, kamu akan diarahkan ke WhatsApp dengan pesan yang sudah terisi otomatis. Tinggal kirim, dan pesananmu langsung sampai ke Warung Sess Mas Resky.</p>
+      </div>
+      <a class="btn btn-primary" href="https://wa.me/6285748091574?text=Halo%2C%20saya%20mau%20tanya-tanya%20menu%20Warung%20Sess%20Mas%20Resky" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.6A11 11 0 1 0 20.5 3.5z"/></svg>
+        Chat Langsung
+      </a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Warung Sess Mas Resky &mdash; pesan lewat <a class="fwa" href="https://wa.me/6285748091574" target="_blank" rel="noopener">WhatsApp 0857-4809-1574</a></p>
+  </div>
+</footer>
+
+<a class="float-wa" href="https://wa.me/6285748091574" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 0 0 3.6 17.3L2 22l4.8-1.6A11 11 0 1 0 20.5 3.5zm-8.4 17a9 9 0 0 1-4.6-1.3l-.3-.2-3 1 1-2.9-.2-.3A9 9 0 1 1 12.1 20.5zm5-6.7c-.3-.1-1.6-.8-1.8-.9-.2-.1-.4-.1-.6.1-.2.3-.7.9-.8 1-.2.2-.3.2-.5.1-.3-.1-1.2-.4-2.2-1.4-.8-.7-1.4-1.6-1.6-1.9-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.6-1.5-.8-2-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-1 1-1 2.3 0 1.4 1 2.7 1.1 2.9.1.2 2 3.1 4.9 4.3.7.3 1.2.5 1.6.6.7.2 1.3.2 1.8.1.5-.1 1.6-.7 1.9-1.3.2-.6.2-1.1.2-1.3-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+</body>
+</html>
